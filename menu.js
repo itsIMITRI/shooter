@@ -94,16 +94,12 @@ app.ticker.add((delta) => {
 
   const button = new PIXI.Sprite(textureButton);
 
-  button.x = 300;
+  button.anchor.set(0.5);
+  button.x = 400;
   button.y = 150;
   button.scale.x = 0.5;
   button.scale.y = 0.5;
-
+  button.interactive = true;
+  button.buttonMode = true;
   app.stage.addChild(button);
-
-  function onButtonDown() {
-    this.isdown = true;
-    this.texture = textureButtonDown;
-    this.alpha = 1;
-  }
 });
